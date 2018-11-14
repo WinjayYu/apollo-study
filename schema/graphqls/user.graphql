@@ -1,0 +1,28 @@
+# import Resume from "resume.graphql"
+
+# User的基础模型
+type User {
+    id: ID!
+    name: String!
+    isFF: Boolean
+    resume: Resume
+}
+
+# User 查询时可加入的条件
+input userFilter {
+    name: String
+    # 这一步不会去真正完全filter(这个字段不是每个用户都有,所以没有此字段的时候就默认当成不是付费用户了)
+    isFF: Boolean
+    # hasResume没有真正对应的字段 (简历不是每个人都有的)
+    hasResume: Boolean
+}
+
+# User相关查询的的方法
+type Query {
+    findUsers(filter: userFilter): [User!]!
+}
+
+# 针对此User的相关操作
+type Mutation {
+    user(id: String): UserOps
+}

@@ -1,0 +1,21 @@
+{
+  "name": "bxapi",
+  "version": "1.0.0",
+  "description": "百姓网GraphQL api整合",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-koa": "^2.2.0",
+    "body-parser": "^1.18.3",
+    "graphql": "^14.0.2",
+    "graphql-import": "^0.7.1",
+    "graphql-tools": "^4.0.3",
+    "koa": "^2.6.2",
+    "lodash": "^4.17.11",
+    "merge-graphql-schemas": "^1.5.7"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "userId": "u80825584",
+    "name": "刘宁",
+    "intentionJob": "工人",
+    "expectedSalary": 10000
+  },
+  {
+    "id": "2",
+    "userId": "u80825582",
+    "name": "艾娟",
+    "intentionJob": "司机",
+    "expectedSalary": 20000
+  },
+  {
+    "id": "3",
+    "userId": "u80825580",
+    "name": "余文杰",
+    "intentionJob": "律师",
+    "expectedSalary": 30000
+  }
+]

@@ -1,0 +1,33 @@
+# import User from "user.graphql"
+
+# Ad的基础模型
+type Ad {
+    id: ID!
+    user: User!
+    title: String!
+    categoryId: String!
+    areaId: String!
+    createdTime: String!
+}
+
+# Ad 查询时可加入的条件
+input adFilter {
+    id: ID
+    categoryId: String
+    areaId: String
+    userId: String
+}
+
+# Ad相关查询的的方法
+type Query {
+    findAds(filter: adFilter): [Ad!]!
+}
+
+# 对于一个用户的Ad的操作
+type UserOps {
+    createAd(
+        title: String!
+        categoryId: String!
+        areaId: String!
+    ): Ad!
+}

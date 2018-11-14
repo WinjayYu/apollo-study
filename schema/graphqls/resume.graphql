@@ -1,0 +1,37 @@
+# import User from "user.graphql"
+
+type Resume {
+    id: ID!
+    user: User!
+    name: String!
+    intentionJob: String!
+    expectedSalary: Int!
+}
+
+# User 查询时可加入的条件
+input resumeFilter {
+    name: String
+    intentionJob: String
+    expectedSalaryIntervalStart: Int
+    expectedSalaryIntervalEnd: Int
+}
+
+# User相关查询的的方法
+type Query {
+    findResumes(filter: resumeFilter): [Resume!]!
+}
+
+# 对于一个用户的Resume的操作
+type UserOps {
+    createResume (
+        name: String!
+        intentionJob: String!
+        expectedSalary: Int!
+    ): Resume!
+
+    updateResume(
+        name: String
+        intentionJob: String
+        expectedSalary: Int
+    ): Resume!
+}
