@@ -38,7 +38,7 @@ module.exports = {
         if (filter.hasResume === true) {
           return !!userResume;
         } else if (filter.hasResume === false) {
-          return !user
+          return !userResume
         }
 
         return true;
