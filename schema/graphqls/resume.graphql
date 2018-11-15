@@ -10,6 +10,7 @@ type Resume {
 
 # User 查询时可加入的条件
 input resumeFilter {
+    id: ID
     name: String
     intentionJob: String
     expectedSalaryIntervalStart: Int

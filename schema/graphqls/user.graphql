@@ -10,6 +10,7 @@ type User {
 
 # User 查询时可加入的条件
 input userFilter {
+    id: ID
     name: String
     # 这一步不会去真正完全filter(这个字段不是每个用户都有,所以没有此字段的时候就默认当成不是付费用户了)
     isFF: Boolean

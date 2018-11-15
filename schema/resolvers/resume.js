@@ -29,8 +29,8 @@ module.exports = {
         expectedSalaryIntervalEnd: sEnd
       } = filter;
 
-      delete filter.expectedSalaryIntervalStart
-      delete filter.expectedSalaryIntervalEnd
+      delete filter.expectedSalaryIntervalStart;
+      delete filter.expectedSalaryIntervalEnd;
 
       const resumeList = Object.keys(filter).length ?
         _filter(resumes, filter) :
@@ -45,6 +45,7 @@ module.exports = {
 
       return resumeList.filter((resume) => {
         const salary = resume.expectedSalary;
+        if (!isSalaryFind) return true;
         return salary >= sStart && salary <= sEnd
       });
     },

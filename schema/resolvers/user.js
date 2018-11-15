@@ -1,9 +1,9 @@
-const users = require('../db/users.json')
-const resumes = require('../db/resumes.json')
+const users = require('../db/users.json');
+const resumes = require('../db/resumes.json');
 const {
   filter: _filter,
   find: _find,
-} = require('lodash/collection')
+} = require('lodash/collection');
 
 module.exports = {
 

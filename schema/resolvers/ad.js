@@ -1,9 +1,9 @@
-const ads = require('../db/ads.json')
-const users = require('../db/users.json')
+const ads = require('../db/ads.json');
+const users = require('../db/users.json');
 const {
   filter: _filter,
   find: _find,
-} = require('lodash/collection')
+} = require('lodash/collection');
 
 module.exports = {
 
