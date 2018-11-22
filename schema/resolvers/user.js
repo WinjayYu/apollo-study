@@ -4,6 +4,20 @@ const {
   filter: _filter,
   find: _find,
 } = require('lodash/collection');
+const {
+  isUndefined: _isUndefined,
+} = require('lodash/lang');
+
+const USER_TYPE = {
+  TYPE_NORMAL: 0, // 平民百姓
+  TYPE_MASTER: 1, // 管理员
+  TYPE_SUPERMAN: 2, // 超人
+  TYPE_AGENT: 3, // 代理商
+};
+
+const getUserType = (typeInt) => {
+  return Object.keys(USER_TYPE)[Object.values(USER_TYPE).indexOf(typeInt)];
+};
 
 module.exports = {
 
@@ -23,6 +37,11 @@ module.exports = {
       delete filterRules.hasResume;
       if (filterRules.isFF !== true) {
         delete filterRules.isFF;
+      }
+
+      // user type
+      if (!_isUndefined(filterRules.type)) {
+        filterRules.type = USER_TYPE[filterRules.type];
       }
 
       let userList = Object.keys(filterRules).length ?
@@ -52,7 +71,10 @@ module.exports = {
    * Ad schema 关联user
    */
   User: {
-    resume: (user) => _find(resumes, {userId: user.id})
+    resume: (user) => _find(resumes, {userId: user.id}),
+    type: (user) => {
+      return getUserType(user.type);
+    },
   },
 
   /**

@@ -1,10 +1,12 @@
 # import User from "user.graphql"
 
+scalar AdTitle #Ad标题 长度不能超过50字符
+
 # Ad的基础模型
 type Ad {
     id: ID!
     user: User!
-    title: String!
+    title: AdTitle!
     categoryId: String!
     areaId: String!
     createdTime: String!
@@ -26,7 +28,7 @@ type Query {
 # 对于一个用户的Ad的操作
 type UserOps {
     createAd(
-        title: String!
+        title: AdTitle!
         categoryId: String!
         areaId: String!
     ): Ad!

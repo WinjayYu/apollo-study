@@ -1,0 +1,36 @@
+interface Node {
+    id: ID!
+    type: String!
+    name: String!
+    englishName: String!
+    parent: Node
+    children: [Node!]
+}
+
+# 类目meta
+type MCategory implements Node {
+    id: ID!
+    type: String!
+    name: String!
+    englishName: String!
+    filters: [String!]!
+    parent: MCategory
+    children: [MCategory!]
+}
+
+# 地区meta
+type MEntity implements Node {
+    id: ID!
+    type: String!
+    name: String!
+    englishName: String!
+    latlng: LAT_LNG!
+    parent: MEntity
+    children: [MEntity!]
+}
+
+# 经纬度类型
+type LAT_LNG {
+    lat: Float!,
+    lng: Float!,
+}

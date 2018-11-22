@@ -1,9 +1,17 @@
 # import Resume from "resume.graphql"
 
+enum UserType {
+    TYPE_NORMAL # 平民百姓
+    TYPE_MASTER # 管理员
+    TYPE_SUPERMAN # 超人
+    TYPE_AGENT # 代理商
+}
+
 # User的基础模型
 type User {
     id: ID!
     name: String!
+    type: UserType!
     isFF: Boolean
     resume: Resume
 }
@@ -16,6 +24,7 @@ input userFilter {
     isFF: Boolean
     # hasResume没有真正对应的字段 (简历不是每个人都有的)
     hasResume: Boolean
+    type: UserType
 }
 
 # User相关查询的的方法
